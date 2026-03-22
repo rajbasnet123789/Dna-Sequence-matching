@@ -1,8 +1,8 @@
-##Low-Cost Protein Electrophoresis Analyzer (LC-PEA)
+**Low-Cost Protein Electrophoresis Analyzer (LC-PEA)**
 
 This full-stack web application enables automated analysis of electrophoresis gel images to detect M-spikes, quantify protein band intensity, and support future prediction of disease progression using time-series models.
 
-##Project Abstract
+**Project Abstract**
 
 Serum protein electrophoresis (SPE) is widely used for diagnosing monoclonal gammopathies, immunodeficiencies, and chronic inflammatory conditions. However, traditional systems are expensive and require centralized laboratory infrastructure.
 
@@ -10,10 +10,10 @@ The LC-PEA system addresses this limitation by providing a low-cost, portable, a
 
 The platform performs image preprocessing, band detection, M-spike classification using KNN (currently implemented), and densitometry. Future enhancements include CNN-based classification and ARIMA/SARIMA-based disease progression prediction.
 
-##System Architecture
+**System Architecture**
 ![System Architecture](./architecture.png)
 
-                                                                ##Overall Architecture (DFD)
+                                                                **Overall Architecture (DFD)**
 
 This architecture represents the complete pipeline:
 
@@ -22,12 +22,12 @@ Image preprocessing and feature extraction
 M-spike detection using machine learning
 Data storage and analysis
 Time-series forecasting (planned)
-##Visualization and reporting
+**Visualization and reporting**
 
 ![M-Spike Workflow](./mspike_workflow.png)
 M-Spike Detection and Electrophoresis Workflow
 
-##This workflow includes:
+**This workflow includes:**
 
 Gel electrophoresis band formation
 Image capture and processing
@@ -47,7 +47,7 @@ In Progress
 Time-series analysis using ARIMA and SARIMA
 Hardware setup and ESP32-CAM integration
 CNN-based model for improved classification
-##Features
+**Features**
 User authentication with JWT
 Upload and process electrophoresis gel images
 Automated preprocessing pipeline:
@@ -58,7 +58,7 @@ Digital densitometry for band intensity measurement
 Report history tracking
 Visualization dashboard
 Time-series forecasting module (in progress)
-##End-to-End Workflow
+**End-to-End Workflow**
 Stage 1: System Setup (Hardware – In Progress)
 Electrophoresis setup using agarose gel and electrodes
 Controlled lighting environment
@@ -107,7 +107,7 @@ Integration of hardware, ML, and analytics pipeline
 
 Output: End-to-end automated diagnostic system
 
-##Project Structure
+**Project Structure**
 DNA/
 ├── backend/               # FastAPI backend
 │   ├── app/               # Application code
@@ -126,9 +126,9 @@ DNA/
 │   │   └── index.js
 │   └── package.json
 │
-└── assets/
-    ├── architecture.png
-    └── mspike_workflow.png
+├── architecture.png
+└── mspike_workflow.png
+   
 Setup and Installation
 Backend
 cd backend
