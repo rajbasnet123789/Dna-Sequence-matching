@@ -21,7 +21,7 @@ DNA/
 │   │   ├── main.py        # Main FastAPI application
 │   │   ├── auth.py        # Authentication logic
 │   │   ├── database.py    # Database configuration
-│   │   ├── dna_utils.py   # DNA processing utilities
+│   │   ├── electrophoresis_utils.py   # DNA processing utilities
 │   │   └── models.py      # Database models
 │   ├── requirements.txt   # Python dependencies
 │   └── run.py             # Entry point
