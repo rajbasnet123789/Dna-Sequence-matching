@@ -1,87 +1,165 @@
-# DNA Sequence Comparison Application
+##Low-Cost Protein Electrophoresis Analyzer (LC-PEA)
 
-This full-stack web application allows users to compare DNA sequences from fluorescent chromatogram images using peak intensity analysis, KMP, and Rabin-Karp algorithms.
+This full-stack web application enables automated analysis of electrophoresis gel images to detect M-spikes, quantify protein band intensity, and support future prediction of disease progression using time-series models.
 
-## Features
+##Project Abstract
 
-- User authentication with JWT
-- Upload and process DNA chromatogram images
-- Two-stage comparison process:
-  1. First stage: Peak intensity-based sequence extraction and visualization
-  2. Second stage: KMP and Rabin-Karp algorithm comparison with complexity and time metrics
-- Report history tracking
-- Detailed report viewing
+Serum protein electrophoresis (SPE) is widely used for diagnosing monoclonal gammopathies, immunodeficiencies, and chronic inflammatory conditions. However, traditional systems are expensive and require centralized laboratory infrastructure.
 
-## Project Structure
+The LC-PEA system addresses this limitation by providing a low-cost, portable, and AI-driven solution. It integrates electrophoresis hardware, edge-based image acquisition (ESP32-CAM), machine learning models, and time-series forecasting to enable automated diagnostics.
 
-```
+The platform performs image preprocessing, band detection, M-spike classification using KNN (currently implemented), and densitometry. Future enhancements include CNN-based classification and ARIMA/SARIMA-based disease progression prediction.
+
+##System Architecture
+Overall Architecture (DFD)
+
+This architecture represents the complete pipeline:
+
+Image acquisition (ESP32-CAM – pending integration)
+Image preprocessing and feature extraction
+M-spike detection using machine learning
+Data storage and analysis
+Time-series forecasting (planned)
+##Visualization and reporting
+M-Spike Detection and Electrophoresis Workflow
+
+##This workflow includes:
+
+Gel electrophoresis band formation
+Image capture and processing
+Band detection and intensity analysis
+M-spike identification and classification
+Current Progress
+Completed
+Image preprocessing pipeline:
+Noise removal
+Contrast enhancement
+ROI (band/lane) extraction
+M-spike detection using KNN classifier
+Band intensity calculation (digital densitometry)
+Backend (FastAPI) and frontend (React) integration
+User authentication and report storage system
+In Progress
+Time-series analysis using ARIMA and SARIMA
+Hardware setup and ESP32-CAM integration
+CNN-based model for improved classification
+##Features
+User authentication with JWT
+Upload and process electrophoresis gel images
+Automated preprocessing pipeline:
+Image enhancement and denoising
+Band extraction and segmentation
+M-spike detection using KNN classifier
+Digital densitometry for band intensity measurement
+Report history tracking
+Visualization dashboard
+Time-series forecasting module (in progress)
+##End-to-End Workflow
+Stage 1: System Setup (Hardware – In Progress)
+Electrophoresis setup using agarose gel and electrodes
+Controlled lighting environment
+ESP32-CAM integration (pending completion)
+
+Output: Stable imaging system (partially completed)
+
+Stage 2: Data Acquisition
+Capture gel images (currently manual)
+Planned: automated capture via ESP32-CAM
+
+Output: Raw electrophoresis images
+
+Stage 3: Image Processing
+Noise filtering
+Contrast enhancement
+Band/ROI extraction
+
+Output: Clean band patterns
+
+Stage 4: Pattern Analysis
+KNN-based classification
+Detection:
+0 = Normal
+1 = M-spike detected
+
+Output: Identification of abnormal protein bands
+
+Stage 5: Quantification and Storage
+Band intensity measurement
+M-spike estimation
+Data storage with timestamps
+
+Output: Structured analytical dataset
+
+Stage 6: Time-Series Analysis (In Progress)
+Trend analysis of M-spike values
+Planned models:
+ARIMA
+SARIMA
+
+Output: Predictive insights
+
+Stage 7: System Integration (In Progress)
+Integration of hardware, ML, and analytics pipeline
+
+Output: End-to-end automated diagnostic system
+
+##Project Structure
 DNA/
 ├── backend/               # FastAPI backend
 │   ├── app/               # Application code
-│   │   ├── main.py        # Main FastAPI application
-│   │   ├── auth.py        # Authentication logic
-│   │   ├── database.py    # Database configuration
-│   │   ├── electrophoresis_utils.py   # DNA processing utilities
-│   │   └── models.py      # Database models
-│   ├── requirements.txt   # Python dependencies
-│   └── run.py             # Entry point
-└── frontend/              # React frontend
-    ├── src/               # Source code
-    │   ├── components/    # React components
-    │   ├── App.js         # Main React app
-    │   └── index.js       # Entry point
-    └── package.json       # JavaScript dependencies
-```
+│   │   ├── main.py
+│   │   ├── auth.py
+│   │   ├── database.py
+│   │   ├── electrophoresis_utils.py   # Image processing utilities
+│   │   └── models.py
+│   ├── requirements.txt
+│   └── run.py
+│
+├── frontend/              # React frontend
+│   ├── src/
+│   │   ├── components/
+│   │   ├── App.js
+│   │   └── index.js
+│   └── package.json
+│
+└── assets/
+    ├── architecture.png
+    └── mspike_workflow.png
+Setup and Installation
+Backend
+cd backend
+pip install -r requirements.txt
+python run.py
 
-## Setup and Installation
+Backend runs at: http://localhost:8000
 
-### Backend
+Frontend
+cd frontend
+npm install
+npm start
 
-1. Navigate to the backend directory:
-   ```
-   cd backend
-   ```
+Frontend runs at: http://localhost:3000
 
-2. Install dependencies:
-   ```
-   pip install -r requirements.txt
-   ```
+Usage
+Register or log in
+Navigate to the "Analyze" section
+Upload electrophoresis gel images
+Run M-spike detection
+View band intensity and classification results
+Access report history
 
-3. Run the backend server:
-   ```
-   python run.py
-   ```
-   The backend will run on http://localhost:8000
+##Technologies Used
+Backend: FastAPI, SQLAlchemy, JWT Authentication, OpenCV, NumPy, SciPy, Pandas
+Frontend: React, Material-UI, Axios, Chart.js
+Machine Learning: KNN (implemented), CNN (planned)
+Time-Series: ARIMA, SARIMA (in progress)
+Database: SQLite (development), configurable for production
+Hardware: ESP32-CAM (integration in progress), electrophoresis setup
 
-### Frontend
-
-1. Navigate to the frontend directory:
-   ```
-   cd frontend
-   ```
-
-2. Install dependencies:
-   ```
-   npm install
-   ```
-
-3. Run the frontend development server:
-   ```
-   npm start
-   ```
-   The frontend will run on http://localhost:3000
-
-## Usage
-
-1. Register a new account or login with existing credentials
-2. Navigate to the "Compare" page
-3. Upload two DNA chromatogram images
-4. Click "Compare DNA Sequences" to see the peak intensity analysis
-5. Click "Compare Using KMP and Rabin-Karp Algorithms" to see the algorithm comparison results
-6. View your report history in the "History" page
-
-## Technologies Used
-
-- **Backend**: FastAPI, SQLAlchemy, JWT Authentication, OpenCV, NumPy, SciPy, Pandas
-- **Frontend**: React, Material-UI, Axios, Chart.js
-- **Database**: SQLite (development), can be configured for other databases in production
+##Future Work
+Complete ESP32-CAM hardware integration
+Implement ARIMA and SARIMA forecasting models
+Upgrade KNN to CNN for improved accuracy
+Enable real-time image acquisition
+Deploy system on cloud infrastructure
+Integrate clinical datasets for enhanced diagnostics
