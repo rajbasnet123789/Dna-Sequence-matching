@@ -129,15 +129,15 @@ DNA/
 ├── architecture.png
 └── mspike_workflow.png
    
-Setup and Installation
-Backend
+****Setup and Installation****
+**Backend**
 cd backend
 pip install -r requirements.txt
 python run.py
 
 Backend runs at: http://localhost:8000
 
-Frontend
+**Frontend**
 cd frontend
 npm install
 npm start
@@ -152,7 +152,7 @@ Run M-spike detection
 View band intensity and classification results
 Access report history
 
-##Technologies Used
+**Technologies Used**
 Backend: FastAPI, SQLAlchemy, JWT Authentication, OpenCV, NumPy, SciPy, Pandas
 Frontend: React, Material-UI, Axios, Chart.js
 Machine Learning: KNN (implemented), CNN (planned)
@@ -160,7 +160,7 @@ Time-Series: ARIMA, SARIMA (in progress)
 Database: SQLite (development), configurable for production
 Hardware: ESP32-CAM (integration in progress), electrophoresis setup
 
-##Future Work
+**Future Work**
 Complete ESP32-CAM hardware integration
 Implement ARIMA and SARIMA forecasting models
 Upgrade KNN to CNN for improved accuracy
