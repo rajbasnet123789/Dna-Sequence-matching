@@ -24,7 +24,7 @@ Data storage and analysis
 Time-series forecasting (planned)
 ##Visualization and reporting
 
-![M-Spike Workflow](./assets/mspike_workflow.png)
+![M-Spike Workflow](./mspike_workflow.png)
 M-Spike Detection and Electrophoresis Workflow
 
 ##This workflow includes:
