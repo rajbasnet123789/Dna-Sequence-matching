@@ -109,17 +109,17 @@ Output: End-to-end automated diagnostic system
 
 **Project Structure**
 DNA/
-├── backend/               # FastAPI backend
-│   ├── app/               # Application code
+├── backend/
+│   ├── app/
 │   │   ├── main.py
 │   │   ├── auth.py
 │   │   ├── database.py
-│   │   ├── electrophoresis_utils.py   # Image processing utilities
+│   │   ├── electrophoresis_utils.py
 │   │   └── models.py
 │   ├── requirements.txt
 │   └── run.py
 │
-├── frontend/              # React frontend
+├── frontend/
 │   ├── src/
 │   │   ├── components/
 │   │   ├── App.js
