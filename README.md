@@ -11,7 +11,7 @@ The LC-PEA system addresses this limitation by providing a low-cost, portable, a
 The platform performs image preprocessing, band detection, M-spike classification using KNN (currently implemented), and densitometry. Future enhancements include CNN-based classification and ARIMA/SARIMA-based disease progression prediction.
 
 ##System Architecture
-![System Architecture](./assets/architecture.png)
+![System Architecture](./architecture.png)
 
 Overall Architecture (DFD)
 
