@@ -13,7 +13,7 @@ The platform performs image preprocessing, band detection, M-spike classificatio
 ##System Architecture
 ![System Architecture](./architecture.png)
 
-Overall Architecture (DFD)
+                                                                ##Overall Architecture (DFD)
 
 This architecture represents the complete pipeline:
 
