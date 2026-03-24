@@ -114,7 +114,7 @@ DNA/
 │   │   ├── main.py
 │   │   ├── auth.py
 │   │   ├── database.py
-│   │   ├── electrophoresis_utils.py
+│   │   ├── dna_utils.py
 │   │   └── models.py
 │   ├── requirements.txt
 │   └── run.py
