@@ -114,7 +114,7 @@ DNA/
 │   │   ├── main.py
 │   │   ├── auth.py
 │   │   ├── database.py
-│   │   ├── electrophoresis_utils.py
+│   │   ├── dna_utils.py
 │   │   └── models.py
 │   ├── requirements.txt
 │   └── run.py
@@ -128,6 +128,20 @@ DNA/
 │
 ├── architecture.png
 └── mspike_workflow.png
+
+## System Requirements
+
+**Minimum Requirements:**
+- Python 3.8 or higher
+- Node.js 14.0 or higher
+- npm 6.0 or higher
+- 2GB RAM minimum
+- 200MB disk space
+
+**For Hardware Integration (ESP32-CAM):**
+- ESP32-CAM microcontroller
+- USB cable for flashing
+- Suitable power supply
    
 ****Setup and Installation****
 **Backend**
@@ -167,3 +181,25 @@ Upgrade KNN to CNN for improved accuracy
 Enable real-time image acquisition
 Deploy system on cloud infrastructure
 Integrate clinical datasets for enhanced diagnostics
+
+## Troubleshooting
+
+**CORS Errors:**
+- Ensure frontend runs on `http://localhost:3000`
+- Check backend CORS configuration in `app/main.py`
+
+**Database Connection Issues:**
+- Verify `database.py` configuration
+- Ensure SQLite database file has proper permissions in `uploads/` directory
+
+**Image Upload Failures:**
+- Check that `uploads/` directory exists and is writable
+- Verify file size limits in backend configuration
+
+**Port Already in Use:**
+- Backend: Kill process on port 8000 or change port in `run.py`
+- Frontend: Kill process on port 3000 or change port in `package.json`
+
+## Contributing
+
+For contribution guidelines, please see the project's main repository. Small improvements to documentation, tests, and minor bug fixes are welcome contributions.
